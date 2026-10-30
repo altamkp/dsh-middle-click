@@ -103,7 +103,16 @@ The Host half (`index.js`) is deliberately a no-op. It exists so the package has
 
 ## Migration from the collection
 
-If `@altamkp/dsh-plugin` is still installed and its own middle-click-close plugin is enabled, installing this package means the gesture is installed twice, and one middle click is processed by both copies. Disable the collection's **Middle-click close** row in the plugin manager before switching — or remove the collection bundle altogether if this is the only plugin you used from it.
+The Middle-click close plugin used to live inside the `@altamkp/dsh-plugin`
+collection. **Collection v2.8.0 removed it** — the row, the browser half and
+the locale files are gone from that bundle — so a profile on v2.8.0 or newer
+carries the plugin exactly once, and there is no second copy to disable.
+
+A profile still pinned to an older collection release carries both: the
+collection's own row and this package's row, and one middle click is processed
+by both copies. Update the collection — reinstall the bundle in the plugin
+manager, or `pnpm update @altamkp/dsh-plugin` in the profile directory — so it
+resolves to v2.8.0, and the duplicate is gone.
 
 What changes and what does not:
 
