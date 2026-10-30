@@ -7,3 +7,7 @@ selftest.json
 # Screenshot scratch files (the README's own images live in docs/)
 .pnpm-store/
 *.log
+
+# The packed tarball the release workflow builds
+dist/
+*.tgz

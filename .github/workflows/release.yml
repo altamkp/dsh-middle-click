@@ -26,6 +26,9 @@ jobs:
           node-version: 22
       - name: Pack the package
         run: |
+          # `npm pack --pack-destination` writes into the directory but does
+          # not create it, and the pack fails with ENOENT when it is missing.
+          mkdir -p dist
           npm pack --pack-destination dist
           # npm names the tarball after the scoped package
           # (`altamkp-dsh-middle-click-1.0.3.tgz`); the stable asset name is
