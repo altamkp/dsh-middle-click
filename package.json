@@ -1,6 +1,6 @@
 {
   "name": "@altamkp/dsh-middle-click",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "type": "module",
   "description": "Middle-click closes a session or a sidebar tab in the DeepSeek Harness Web UI, with its own Settings tab.",
@@ -22,7 +22,7 @@
     "icon.svg",
     "docs/*.png",
     "README.md",
-    "README.zh-CN.md",
+    "README.en.md",
     "LICENSE"
   ],
   "dsh": {
