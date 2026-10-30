@@ -1,0 +1,9 @@
+# One row: this bundle is one plugin.
+#
+# The row mounts the package root. Its Host half (`index.js`) carries no
+# behaviour — everything this plugin does happens in the Web page, in the
+# `./client` bundle the same package exports — but the row is also what makes
+# the browser half part of the Web module roster, so it must stay mounted.
+- insert:
+    - id: middle-click-close
+      name: '@altamkp/dsh-middle-click'

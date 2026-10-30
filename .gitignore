@@ -1,0 +1,9 @@
+node_modules/
+
+# Local diagnostics written while developing this plugin
+plugin-debug.log
+selftest.json
+
+# Screenshot scratch files (the README's own images live in docs/)
+.pnpm-store/
+*.log
