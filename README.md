@@ -10,7 +10,7 @@
 
 ![设置里的「中键关闭」页](docs/settings-zh.png)
 
-这个仓库是把原本放在 `@altamkp/dsh-plugin` 合集里的「中键关闭」插件单独抽出来的版本，版本号 1.0.0。源码在 <https://github.com/altamkp/dsh-middle-click>（目前是私有仓库）。
+这个仓库是把原本放在 `@altamkp/dsh-plugin` 合集里的「中键关闭」插件单独抽出来的版本，版本号 1.0.3。源码在 <https://github.com/altamkp/dsh-middle-click>。
 
 ## 工作原理
 
@@ -91,7 +91,7 @@
 }
 ```
 
-上面的 `github:` 写法需要有仓库权限的账号——这个仓库目前还是私有的。
+上面的 `github:` 写法直接从本仓库安装，这个仓库是公开的。
 
 ## 环境与兼容性
 
@@ -125,7 +125,9 @@ dsh-middle-click/
 │   ├── en.json           插件的名称和描述
 │   └── zh.json
 ├── icon.svg              插件管理器里显示的图标
+├── assets/icon-180.png   市场卡片用的位图图标
 ├── docs/                 本文里的截图
+├── screenshots.json      市场展示的截图及其顺序
 └── LICENSE               MIT
 ```
 

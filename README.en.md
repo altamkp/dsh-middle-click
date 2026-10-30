@@ -10,7 +10,7 @@ Middle-click closes a session or a sidebar tab in the DeepSeek Harness Web UI, t
 
 ![The Middle-click close tab in Settings](docs/settings-en.png)
 
-This is the standalone extraction of the Middle-click close plugin that used to live inside the `@altamkp/dsh-plugin` collection. The current release is 1.0.0. The source lives at <https://github.com/altamkp/dsh-middle-click> (private for now).
+This is the standalone extraction of the Middle-click close plugin that used to live inside the `@altamkp/dsh-plugin` collection. The current release is 1.0.3. The source lives at <https://github.com/altamkp/dsh-middle-click>.
 
 ## How it works
 
@@ -91,7 +91,7 @@ While working on the plugin itself, `link:` keeps the installed copy in step wit
 }
 ```
 
-The `github:` spec above needs an account with access to the repository, which is private at the moment.
+The `github:` spec above installs straight from this repository, which is public.
 
 ## Requirements and compatibility
 
@@ -132,7 +132,9 @@ dsh-middle-click/
 │   ├── en.json           the plugin's name and description
 │   └── zh.json
 ├── icon.svg              the icon the plugin manager shows
+├── assets/icon-180.png   the raster tile marketplaces draw
 ├── docs/                 the screenshots in this README
+├── screenshots.json      the screenshots a marketplace shows, in order
 └── LICENSE               MIT
 ```
 
