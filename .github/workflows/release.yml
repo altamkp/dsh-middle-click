@@ -1,0 +1,41 @@
+# Publish a GitHub release with the packed package attached.
+#
+# The asset name carries NO version on purpose. Plugin marketplaces point at
+# `releases/latest/download/dsh-middle-click.tgz`, and that URL resolves
+# "latest" at request time but takes the filename literally — so an asset
+# named `dsh-middle-click-1.0.3.tgz` would work on the day it is published
+# and 404 the moment the next release is cut, with nothing noticing. One
+# stable name is the only version of this that keeps working.
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pack the package
+        run: |
+          npm pack --pack-destination dist
+          # npm names the tarball after the scoped package
+          # (`altamkp-dsh-middle-click-1.0.3.tgz`); the stable asset name is
+          # what the marketplace URL expects.
+          mv dist/*.tgz dist/dsh-middle-click.tgz
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            dist/dsh-middle-click.tgz#dsh-middle-click.tgz
